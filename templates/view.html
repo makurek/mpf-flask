@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DB view</title>
+</head>
+<body>
+{%  if result %}
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Photo URL</th>
+        </tr>
+    {% for t in result %}
+    <tr>
+        <td>{{ t[0] }}</td>
+        <td>{{ t[1] }}</td>
+        <td>{{ t[2] }}</td>
+    </tr>
+    {% endfor %}
+    </table>
+
+
+{%  endif %}
+</body>
+</html>
