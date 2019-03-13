@@ -1,0 +1,22 @@
+sudo yum update -y
+sudo yum install python3 mariadb mariadb-server git
+sudo pip3 install flask flask-bootstrap flask-wtf sqlalchemy pymysql
+sudo systemctl start mariadb
+sudo mysql_secure_installation
+
+-------- database scheme --------
+
+mysql -u root -p
+create database mpf;
+use mpf;
+create table product (
+productID int,
+name varchar(255),
+photoURL varchar(255)
+);
+
+-------- database content ----------
+
+
+INSERT INTO product (productID, name, photoURL) VALUES (1, "product 1", "https://s3.amazon.com/bucket/file1");
+INSERT INTO product (productID, name, photoURL) VALUES (2, "product 2", "https://s3.amazon.com/bucket/file2");
